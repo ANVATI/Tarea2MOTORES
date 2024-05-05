@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private float limitSuperior;
     private float limitInferior;
     public int player_lives = 4;
+    public int points;
     void Start()
     {
         SetMinMax();
@@ -72,6 +73,10 @@ public class PlayerMovement : MonoBehaviour
         if (other.tag == "Candy")
         {
             CandyGenerator.instance.ManageCandy(other.gameObject.GetComponent<CandyController>(), this);
+        }
+        if (other.tag == "Obstacle")
+        {
+            ObstacleGenerator.instance.ManagerObstacle(other.gameObject.GetComponent<ObstacleController>(), this);
         }
     }
 }

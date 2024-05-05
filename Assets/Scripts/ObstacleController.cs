@@ -1,17 +1,17 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CandyController : MonoBehaviour
+public class ObstacleController : MonoBehaviour
 {
     public int frame;
-    public int pointsChange;
+    public int lifeChanges;
 
     void Update()
     {
         if (transform.position.x <= -Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0)).x)
         {
-            CandyGenerator.instance.ManageCandy(this);
+            ObstacleGenerator.instance.ManagerObstacle(this);
         }
     }
 }
