@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class CandyController : MonoBehaviour
 {
-    public int frame;
-    public int pointsChange;
-
+    public Candys candys;
     void Update()
     {
         if (transform.position.x <= -Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0)).x)

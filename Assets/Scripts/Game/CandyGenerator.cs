@@ -63,7 +63,7 @@ public class CandyGenerator : MonoBehaviour
         */
 
         int POINT = player_script.points;
-        int live_changer = candy_script.pointsChange;
+        int live_changer = candy_script.candys.pointsChange;
         POINT += live_changer;
 
         print(POINT);
