@@ -100,8 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5053cc4771450ed4090d48d00768cbb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frame: 3
-  pointsChange: 1
+  candys: {fileID: 11400000, guid: 0082178347336e64783f3a06b6ce356a, type: 2}
 --- !u!61 &723351182583074585
 BoxCollider2D:
   m_ObjectHideFlags: 0

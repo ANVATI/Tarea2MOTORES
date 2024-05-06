@@ -121,8 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3103c93844a14ca4ab5874e34c186925, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frame: 2
-  lifeChanges: -1
+  obstacles: {fileID: 11400000, guid: cd54877aa978b4348985ac2d4476726d, type: 2}
 --- !u!61 &7477600591623283836
 BoxCollider2D:
   m_ObjectHideFlags: 0

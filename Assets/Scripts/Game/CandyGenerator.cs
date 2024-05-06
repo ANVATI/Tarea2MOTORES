@@ -7,7 +7,7 @@ public class CandyGenerator : MonoBehaviour
 {
     public static CandyGenerator instance;
     public List<GameObject> Candies = new List<GameObject>();
-    private float time_to_create = 4f;
+    private float time_to_create = 1f;
     private float actual_time = 0f;
     private float limitSuperior;
     private float limitInferior;
@@ -54,6 +54,7 @@ public class CandyGenerator : MonoBehaviour
             Destroy(candy_script.gameObject);
             return;
         }
+
         /*
         if (candy_script.frame == 3)
         {
@@ -62,13 +63,13 @@ public class CandyGenerator : MonoBehaviour
         }
         */
 
-        int POINT = player_script.points;
+        int POINT = player_script.playerData.score;
         int live_changer = candy_script.candys.pointsChange;
         POINT += live_changer;
 
         print(POINT);
 
-        player_script.points = POINT;
+        player_script.playerData.score = POINT;
         
         audioEat.Play();
         Destroy(candy_script.gameObject);

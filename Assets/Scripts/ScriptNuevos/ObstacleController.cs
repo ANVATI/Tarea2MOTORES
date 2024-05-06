@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class ObstacleController : MonoBehaviour
 {
-    public int frame;
-    public int lifeChanges;
-
+    public Obstacles obstacles;
     void Update()
     {
         if (transform.position.x <= -Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0)).x)

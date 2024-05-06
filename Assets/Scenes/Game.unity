@@ -663,7 +663,7 @@ Transform:
   m_GameObject: {fileID: 631198699}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.48, y: 0.45, z: -0.010966193}
+  m_LocalPosition: {x: 12.97, y: -0.03, z: -0.010966193}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -678,7 +678,8 @@ AudioSource:
   m_GameObject: {fileID: 631198699}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4243451914736733688, guid: bdaf35956c4363c4186ac48ffd0841d4,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 35a355f18d5135d4591885c718bcd33c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -1226,7 +1227,7 @@ Transform:
   m_GameObject: {fileID: 1657160263}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.16, y: 0, z: 0}
+  m_LocalPosition: {x: 8.2, y: 1.81, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1249,7 +1250,7 @@ GameObject:
   - component: {fileID: 1714896975}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1430,7 +1431,7 @@ MonoBehaviour:
   InitialPoint: {fileID: 1442607768}
   speed: 10
   player_lives: 4
-  points: 0
+  playerData: {fileID: 11400000, guid: 4c7e7fa2a923d4c4fa56770918b0043a, type: 2}
 --- !u!114 &1714896975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1750,6 +1751,8 @@ MonoBehaviour:
   - {fileID: 5311973870086506349, guid: 79db077fe4e9a3c40989c7b86578789e, type: 3}
   - {fileID: 5991686176134336339, guid: 4ca734ed6332dc14a9ac2932634e3cdd, type: 3}
   - {fileID: 7679793561126234375, guid: e7542e08ec32cc64a9cdd3742cb2457d, type: 3}
+  - {fileID: 8481299544167652516, guid: 801a0beaef03f37478e79f8556cb4ec6, type: 3}
+  - {fileID: 856964337208705762, guid: de14f28b38a61ab4da0e2adad4d9116c, type: 3}
   actual_candies: []
   audioEat: {fileID: 2069459773}
 --- !u!4 &2069459772

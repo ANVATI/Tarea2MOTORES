@@ -64,7 +64,7 @@ public class ObstacleGenerator : MonoBehaviour
         */
 
         int lives = player_script.player_lives;
-        int live_changer = obstacle_script.lifeChanges;
+        int live_changer = obstacle_script.obstacles.lifeChange;
         lives += live_changer;
         print(lives);
 
