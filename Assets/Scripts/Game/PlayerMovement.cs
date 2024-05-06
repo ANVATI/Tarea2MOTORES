@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed;
     private float limitSuperior;
     private float limitInferior;
+    public TMP_Text Life;
+    public TMP_Text Score;
     public int player_lives = 4;
     public PlayerData playerData;
     Vector2 _movement;
@@ -39,6 +42,8 @@ public class PlayerMovement : MonoBehaviour
         {
             myRB.velocity = Vector2.zero;
         }
+        UpdateLife();
+        UpdatePoints();
     }
 
     public void OnMovement(InputAction.CallbackContext context)
@@ -82,5 +87,14 @@ public class PlayerMovement : MonoBehaviour
     public void AddScore(int pointsToAdd)
     {
         playerData.SetScore(playerData.score + pointsToAdd);
+    }
+
+    private void UpdatePoints()
+    {
+        Score.text = "SCORE: " + playerData.score.ToString();
+    }
+    private void UpdateLife()
+    {
+        Life.text = "LIFE: " + player_lives.ToString();
     }
 }
