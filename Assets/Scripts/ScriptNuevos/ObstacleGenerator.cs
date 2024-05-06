@@ -7,11 +7,10 @@ public class ObstacleGenerator : MonoBehaviour
 {
     public static ObstacleGenerator instance;
     public List<GameObject> Obstacles = new List<GameObject>();
+    public GameObject Warning;
     private float time_to_create = 6f;
-    private float actual_time = 0f;
     private float limitSuperior;
     private float limitInferior;
-    public List<GameObject> actual_obstacles = new List<GameObject>();
     [SerializeField] private AudioSource audioCollision;
     [SerializeField] private AudioSource audioHeart;
 
@@ -26,18 +25,23 @@ public class ObstacleGenerator : MonoBehaviour
     void Start()
     {
         SetMinMax();
+        StartCoroutine(GenerateObstaclesWithWarning());
     }
 
-    void Update()
+    IEnumerator GenerateObstaclesWithWarning()
     {
-        actual_time += Time.deltaTime;
-        if (time_to_create <= actual_time)
+        while (true)
         {
             GameObject _obstacle = Instantiate(Obstacles[Random.Range(0, Obstacles.Count)],
             new Vector3(transform.position.x, Random.Range(limitInferior, limitSuperior), 0f), Quaternion.identity);
             _obstacle.GetComponent<Rigidbody2D>().velocity = new Vector2(-2f, 0);
-            actual_time = 0f;
-            actual_obstacles.Add(_obstacle);
+
+            GameObject _warningSign = Instantiate(Warning, new Vector3(transform.position.x -5, _obstacle.transform.position.y, 0f), Quaternion.identity);
+
+            yield return new WaitForSeconds(2f);
+            Destroy(_warningSign);
+
+            yield return new WaitForSeconds(time_to_create - 2f);
         }
     }
 
@@ -55,13 +59,6 @@ public class ObstacleGenerator : MonoBehaviour
             Destroy(obstacle_script.gameObject);
             return;
         }
-        /*
-        if (candy_script.frame == 3)
-        {
-            SceneManager.LoadScene("GameOver");
-            return;
-        }
-        */
 
         int lives = player_script.player_lives;
         int live_changer = obstacle_script.obstacles.lifeChange;
